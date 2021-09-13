@@ -332,16 +332,38 @@ exploring scatterplots using `{ggplot2}`.
 In the code chunk below, create a scatterplot for the relationship
 between `flipper_length_mm` and `body_mass_g`.
 
+``` r
+ggplot(data = penguins, mapping = aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point()
+```
+
+    ## Warning: Removed 2 rows containing missing values (geom_point).
+
+![](activity02-ggplot2-intro_files/figure-gfm/flipper_vs_mass-1.png)<!-- -->
+
 Describe any patterns that you notice.
 
-**Response**:
+**Response**: I see a positive coorilation between flipper length (mm)
+and body mass (g) of the penguins. That is to say, as flipper lenght
+increases, body mass also increases, on average.
 
 Recreate your scatterplot in the code chunk below; however, *map*
 `species` to the `color` and `shape` aesthetics.
 
+``` r
+ggplot(data = penguins, mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species, shape = species)) +
+  geom_point()
+```
+
+    ## Warning: Removed 2 rows containing missing values (geom_point).
+
+![](activity02-ggplot2-intro_files/figure-gfm/flipper_vs_mass_with_species-1.png)<!-- -->
+
 Describe any patterns that you notice.
 
-**Response**:
+**Response**: I notice that Gentoo penguins start have larger flipper
+lenghts on average than the other two species and body mass appears to
+increase at a faster rate when flipper lenght increases, on average.
 
 The previous plot looked great except even in this rather small dataset
 (n = 344), there might are a number of points overlapping. In the R code
@@ -350,9 +372,20 @@ aesthetic) of `size` (using some value larger than zero) and `alpha`
 (using some value between 0 and 1) to make your previous plot more
 effective.
 
+``` r
+ggplot(data = penguins, mapping = aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point(size = 2, alpha = .5)
+```
+
+    ## Warning: Removed 2 rows containing missing values (geom_point).
+
+![](activity02-ggplot2-intro_files/figure-gfm/flipper_vs_mass_with_size_alpha-1.png)<!-- -->
+
 Discuss the decisions you made to help your plot be easier to read.
 
-**Response**:
+**Response**: I chose and alpha of .5 to show that there are some points
+plotted on top of others. I also used slightly large points so they are
+more easily viewed.
 
 Knit, stage, commit (with a meaningful commit message),and push
 everything in your **Git** pane to your GitHub repo. Go to GitHub and
