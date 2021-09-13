@@ -1,6 +1,6 @@
 ---
 title: "Activity 2.1"
-author: "Team Name"
+author: "Luke Cadagin"
 output: github_document
 ---
 
