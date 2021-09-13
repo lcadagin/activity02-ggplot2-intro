@@ -277,7 +277,47 @@ graphs). Using these three graphs to discuss which of these three
 categorical variables seems to be contributing more to these two peaks
 and explain your reasoning.
 
-**Response**:
+``` r
+ggplot(data = penguins, mapping = aes(x = bill_length_mm, y = species)) +
+  geom_boxplot() +
+  geom_jitter(aes(color = species))
+```
+
+    ## Warning: Removed 2 rows containing non-finite values (stat_boxplot).
+
+    ## Warning: Removed 2 rows containing missing values (geom_point).
+
+![](activity02-ggplot2-intro_files/figure-gfm/bill_length_by_species-1.png)<!-- -->
+
+``` r
+ggplot(data = penguins, mapping = aes(x = bill_length_mm, y = sex)) +
+  geom_boxplot() +
+  geom_jitter(aes(color = sex))
+```
+
+    ## Warning: Removed 2 rows containing non-finite values (stat_boxplot).
+
+    ## Warning: Removed 2 rows containing missing values (geom_point).
+
+![](activity02-ggplot2-intro_files/figure-gfm/bill_length_by_sex-1.png)<!-- -->
+
+``` r
+ggplot(data = penguins, mapping = aes(x = bill_length_mm, y = island)) +
+  geom_boxplot() +
+  geom_jitter(aes(color = island))
+```
+
+    ## Warning: Removed 2 rows containing non-finite values (stat_boxplot).
+
+    ## Warning: Removed 2 rows containing missing values (geom_point).
+
+![](activity02-ggplot2-intro_files/figure-gfm/bill_length_by_island-1.png)<!-- -->
+
+**Response**: I would state that the species of the penguin is the
+catagorical variable that is contributing more to these two peaks. This
+is because the Adelle distribution is centered around about 39 mm while
+the Gentoo Distribution is centered around 47 mm and the Chinstrap
+population is centered around 49 mm.
 
 Knit, stage, commit (with a meaningful commit message),and push
 everything in your **Git** pane to your GitHub repo. Go to GitHub and
